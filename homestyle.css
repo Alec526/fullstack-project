@@ -1,0 +1,14 @@
+*, *::before, *::after { box-sizing: inherit }
+
+html {
+    box-sizing: border-box;
+}
+.page {
+    width: 100%;
+}
+
+.event {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
