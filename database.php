@@ -12,3 +12,9 @@ try {
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
+
+$query = "SELECT * from gast";
+$stmt = $conn->prepare($query) or die ("Error 1.");
+$stmt->execute() or die ("Error 2.");
+$row = $stmt->fetch() or die ("Error 3.");
+echo $row["idgast"];
