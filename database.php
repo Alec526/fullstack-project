@@ -1,5 +1,6 @@
 <?php
 
+//establishing connection with database
 $servername = "localhost";
 $dbname = "casus_cafe";
 $username = "root";
@@ -13,6 +14,18 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
+$bandnaam = $_POST['bandnaam'];
+$genre = $_POST['genre'];
+
+$date = $_POST['date'];
+$aanvangstijd = $_POST['aanvangstijd'];
+$eventnaam = $_POST['eventnaam'];
+$entreeprijs = $_POST['entreeprijs'];
+
+$sql = "INSERT INTO users (user_bandnaam, user_genre, user_date, user_aanvangstijd, user_eventnaam, user_entreeprijs)
+ VALUES ('$bandnaam', '$genre', '$date', '$aanvangstijd', '$eventnaam', '$entreeprijs');";
+
+//testing if query can be fetched from database
 $query = "SELECT * from gast";
 $stmt = $conn->prepare($query) or die ("Error 1.");
 $stmt->execute() or die ("Error 2.");
