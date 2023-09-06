@@ -13,6 +13,16 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
+$bandnaam = $_POST['bandnaam'];
+$genre = $_POST['genre'];
+$date = $_POST['date'];
+$time = $_POST['time'];
+
+$eventnaam = $_POST['eventnaam'];
+$entreeprijs = $_POST['entreeprijs'];
+
+$sql = "INSERT INTO band (band_naam, band_genre) VALUES ('$bandnaam', '$genre');";
+
 $query = "SELECT * from gast";
 $stmt = $conn->prepare($query) or die ("Error 1.");
 $stmt->execute() or die ("Error 2.");
