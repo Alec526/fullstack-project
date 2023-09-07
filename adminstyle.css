@@ -1,0 +1,30 @@
+*, *::before, *::after { box-sizing: inherit }
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#form {
+    display:block;
+    width:100px;
+}
+
+#formdiv {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#form2 {
+    display:block;
+    width:100px;
+}
+
+#formdiv2 {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
