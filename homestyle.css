@@ -17,10 +17,11 @@ nav a {
     text-decoration: none;
     color: #844ffe;
     padding: 0 1.5rem;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #dfd5f7;
+    color: #4b26a2;
 }
 
 .logo {
