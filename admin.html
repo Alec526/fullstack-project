@@ -27,7 +27,9 @@
 <section class="box">
     <div class="box-container">
         <div id="formdiv1">
-            <form id="form1" action="" method="post">
+        <form id="form1" action="" method="post">
+            <fieldset>
+            <legend>Bands</legend>
 
             <label for="bandnaam">Naam</label>
             <input type="text" id="bandnaam" name="naam">
@@ -35,11 +37,14 @@
             <label for="genre">Genre</label>
             <input type="text" id="genre" name="genre">
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class="submitbutton">
+            </fieldset>
         </form>
     </div>
         <div id="formdiv2">
             <form id="form2" action="" method="post">
+                <fieldset>
+                <legend>Event</legend>
 
                 <label for="date">Date</label>
                 <input type="date" id="date" name="date">
@@ -53,7 +58,8 @@
                 <label for="entreeprijs">Entree prijs in euro</label>
                 <input type="number" id="entreeprijs" name="entreeprijs">
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="submitbutton">
+                </fieldset>
             </form>
         </div>
     </div>
