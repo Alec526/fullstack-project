@@ -2,21 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="adminstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+    <title>Admin Page</title>
+
 </head>
 
-<style media="screen">
-    label{
-        display: block;
-    }
-</style>
+<nav>
+    <div class="logo">Casus Cafe</div>
+    <div class="nav-items">
+        <a href="/">Home</a>
+        <a href="admin.html">Admin</a>
+        <a href="/">Contact</a>
+    </div>
+</nav>
 
 <body>
-<section class="page">
-    <div id="formdiv">
-        <form id="form" action="" method="post">
+
+<section class="box">
+    <div class="box-container">
+        <div id="formdiv1">
+            <form id="form1" action="" method="post">
 
             <label for="bandnaam">Naam</label>
             <input type="text" id="bandnaam" name="naam">
@@ -27,31 +38,25 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-</section>
+        <div id="formdiv2">
+            <form id="form2" action="" method="post">
 
-<br>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date">
 
-<section class="page2">
-    <div id="formdiv2">
-        <form id="form2" action="" method="post">
+                <label for="aanvangstijd">Aanvangstijd</label>
+                <input type="time" id="aanvangstijd" name="time">
 
-            <label for="date">Date</label>
-            <input type="date" id="date" name="date">
+                <label for="eventnaam">Event naam</label>
+                <input type="text" id="eventnaam" name="eventnaam">
 
-            <label for="aanvangstijd">Aanvangstijd</label>
-            <input type="time" id="aanvangstijd" name="time">
+                <label for="entreeprijs">Entree prijs in euro</label>
+                <input type="number" id="entreeprijs" name="entreeprijs">
 
-            <label for="eventnaam">Event naam</label>
-            <input type="text" id="eventnaam" name="eventnaam">
-
-            <label for="entreeprijs">Entree prijs in euro</label>
-            <input type="number" id="entreeprijs" name="entreeprijs">
-
-            <input type="submit" value="Submit">
-        </form>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
-</section>
-
 
 </body>
 </html>

@@ -1,16 +1,88 @@
-*, *::before, *::after { box-sizing: inherit }
-
-html {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Quicksand', sans-serif;
 }
-#form {
+
+nav {
+    height: 80px;
+    background: #80fcd4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 calc((100vw - 1300px) / 2);
+}
+nav a {
+    text-decoration: none;
+    color: #844ffe;
+    padding: 0 1.5rem;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #4b26a2;
+}
+
+.logo {
+    color: #844ffe;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+}
+
+.box {
+    background: #80fcd4;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    padding: 3rem calc((110vw - 1300px) / 2);
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #844ffe;
+    padding: 0 2rem;
+}
+
+.column-left h1 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.column-left p {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+.column-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+#formdiv {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#form1 {
     display:block;
     width:100px;
 }
 
-#formdiv {
+#formdiv1 {
     width: 50%;
     margin: auto;
     display: flex;
