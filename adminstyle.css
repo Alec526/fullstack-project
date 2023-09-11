@@ -7,7 +7,7 @@
 
 nav {
     height: 80px;
-    background: #80fcd4;
+    background: #dcedff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +33,7 @@ nav a:hover {
 }
 
 .box {
-    background: #80fcd4;
+    background: #d1faff;
 }
 
 .box-container {
