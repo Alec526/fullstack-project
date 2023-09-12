@@ -14,6 +14,7 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
+//saving user input into database
 $bandnaam = $_POST['bandnaam'];
 $genre = $_POST['genre'];
 $date = $_POST['date'];
