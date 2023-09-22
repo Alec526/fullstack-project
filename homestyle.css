@@ -83,6 +83,13 @@ nav a:hover {
     height: 80%;
 }
 
+.events .date {
+  /* grid element use whole width */
+  grid-column: 1 / -1;
+  /* center text */
+
+}
+
 @media screen and (max-width: 768px) {
     .box-container {
         grid-template-columns: 1fr;
