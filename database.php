@@ -16,7 +16,6 @@ try {
 //saving user input into database
 $bandnaam = $_POST['bandnaam'];
 $genre = $_POST['genre'];
-
 $date = $_POST['date'];
 $aanvangstijd = $_POST['aanvangstijd'];
 $eventnaam = $_POST['eventnaam'];
