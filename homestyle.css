@@ -44,7 +44,7 @@ nav a:hover {
     background: #80fcd4;
 }
 
-.box-container {
+.box-welkom {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 95vh;
@@ -83,10 +83,6 @@ nav a:hover {
     height: 80%;
 }
 
-.events .date {
-    
-}
-
 @media screen and (max-width: 768px) {
     .box-container {
         grid-template-columns: 1fr;
@@ -121,4 +117,13 @@ nav a:hover {
     font-size: 1.3em;
     opacity: 0.7;
     transition: 0.5s;
+}
+
+.events {
+    color: #844ffe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }

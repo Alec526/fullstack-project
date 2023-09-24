@@ -32,10 +32,10 @@ $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <legend>Bands</legend>
 
                 <label for="bandnaam">Naam</label>
-                <input type="text" id="bandnaam" name="naam">
+                <input type="text" id="bandnaam" name="naam" required>
 
                 <label for="genre">Genre</label>
-                <select id="genre" name="genre">
+                <select id="genre" name="genre" required>
                   <?php
                     foreach ($genres as $genre) {
                       echo "<option value='" . $genre['id'] . "'>" . $genre['naam'] . "</option>";
@@ -44,13 +44,13 @@ $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </select>
 
                 <label for="date">Date</label>
-                <input type="datetime-local" id="date" name="date">
+                <input type="datetime-local" id="date" name="date" required>
 
                 <label for="eventnaam">Event naam</label>
-                <input type="text" id="eventnaam" name="eventnaam">
+                <input type="text" id="eventnaam" name="eventnaam" required>
 
                 <label for="entreeprijs">Entree prijs in euro</label>
-                <input type="number" step=".01" id="entreeprijs" name="entreeprijs">
+                <input type="number" step=".01" id="entreeprijs" name="entreeprijs" required>
 
                 <input type="submit" value="Submit" class="submitbutton" name="submit">
               </fieldset>

@@ -11,10 +11,10 @@ include 'comp/header.html';
     <div id="main">
 
       <section class="box">
-        <div class="box-container">
+        <div class="box-welkom">
           <div class="column-left">
             <h1>Casus Cafe Programma</h1>
-            <p>Sorteer agenda bij: Datum, maand, locatie, genre</p>
+            <p>Welkom! Bekijk onze events:</p>
           </div>
           <div class="column-right">
             <img src="./images/casuscafeflyer.png" alt="logo van casus cafe" class="box-image">
@@ -27,6 +27,7 @@ include 'comp/header.html';
           <?php
             require_once 'scripts/get-event.php';
           ?>
+            </div>
         </div>
       </section>
     </div>
