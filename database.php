@@ -2,9 +2,9 @@
 
 //establishing connection with database
 $servername = "localhost";
-$dbname = "casus_cafe";
 $username = "root";
 $password = "";
+$dbname = "casus_cafe";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

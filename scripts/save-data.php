@@ -1,7 +1,7 @@
 <?php
 require_once '../database.php';
 
-// code does kys rest in piss bozo
+// code will not work if empty fields
 if (!isset($_POST['submit'])) die('No valid data received');
 
 $bandnaam = $_POST['naam'];
