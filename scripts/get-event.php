@@ -4,13 +4,14 @@ try {
   $event_days = get_event_days($conn);
 
   foreach ($event_days as $event_day) {
+    echo "<div class='event'>";
     echo "<h2 class='date'>" . $event_day['day'] . "</h2>";
     $stmt = $conn->prepare('SELECT * FROM evenementen WHERE DATE(datum) = :day ORDER BY datum ASC;');
     $stmt->execute(array(':day' => $event_day['day']));
     $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($events as $event) {
-      echo "<div class='event'>";
+      echo "<div class='eventdata'>";
       echo "<h3>" . $event['naam'] . "</h3>";
       $stmt = $conn->prepare('SELECT id, naam FROM band WHERE id = (SELECT band_id FROM evenementen WHERE id = :id);');
       $stmt->execute(array(':id' => $event['id']));
@@ -22,6 +23,7 @@ try {
       echo "<p>" . $event['prijs'] . "</p>";
       echo "</div>";
     }
+    echo "</div>";
   }
   
 } catch (PDOException $e) {
