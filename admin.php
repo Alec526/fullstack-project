@@ -16,58 +16,66 @@ $stmt->execute();
 $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<link rel="stylesheet" href="adminstyle.css">
+<link rel="stylesheet" href="main.css">
 
 
 <body>
 
-  <div id="wrapper">
-    <div id="main">
+  <div id="main">
 
-      <section class="box">
-        <div class="box-container">
-          <div id="formdiv1">
-            <form id="form1" action="scripts/save-data.php" method="post">
-              <fieldset>
-                <legend>Bands</legend>
+    <section class="box-admin grid">
+      <div class="column-left">
+        <form id="form" action="scripts/save-data.php" method="post">
+          <fieldset>
+            <legend>Bands</legend>
+            <div class="form-item">
+              <label for="bandnaam">Naam</label>
+              <input type="text" id="bandnaam" name="naam" required>
+            </div>
+            <div class="form-item">
+              <label for="genre">Genre</label>
+              <select id="genre" name="genre" required>
+                <?php
+                foreach ($genres as $genre) {
+                  echo "<option value='" . $genre['id'] . "'>" . $genre['naam'] . "</option>";
+                }
+                ?>
+              </select>
+            </div>
+            <div class="form-item">
+              <label for="date">Date</label>
+              <input type="datetime-local" id="date" name="date" required>
+            </div>
+            <div class="form-item">
+              <label for="eventnaam">Event naam</label>
+              <input type="text" id="eventnaam" name="eventnaam" required>
+            </div>
+            <div class="form-item">
+              <label for="entreeprijs">Entree prijs in euro</label>
+              <input type="number" step=".01" id="entreeprijs" name="entreeprijs" required>
+              <input type="submit" value="Submit" class="submitbutton" name="submit">
+            </div>
+          </fieldset>
+        </form>
+      </div>
 
-                <label for="bandnaam">Naam</label>
-                <input type="text" id="bandnaam" name="naam" required>
+      <div class="column-right">
+        <?php
+        require_once 'comp/image.html'
+        ?>
+      </div>
+    </section>
 
-                <label for="genre">Genre</label>
-                <select id="genre" name="genre" required>
-                  <?php
-                    foreach ($genres as $genre) {
-                      echo "<option value='" . $genre['id'] . "'>" . $genre['naam'] . "</option>";
-                    }
-                  ?>
-                </select>
-
-                <label for="date">Date</label>
-                <input type="datetime-local" id="date" name="date" required>
-
-                <label for="eventnaam">Event naam</label>
-                <input type="text" id="eventnaam" name="eventnaam" required>
-
-                <label for="entreeprijs">Entree prijs in euro</label>
-                <input type="number" step=".01" id="entreeprijs" name="entreeprijs" required>
-
-                <input type="submit" value="Submit" class="submitbutton" name="submit">
-              </fieldset>
-            </form>
-          </div>
-          <div id="formdiv2">
-            <img src="./images/casuscafeflyer.png" alt="logo van casus cafe" class="box-image">
-          </div>
-        </div>
-
-
-    </div>
   </div>
   <?php
   include 'comp/footer.html';
   ?>
 
+  <style>
+    nav {
+      background: #dcedff;
+    }
+  </style>
 </body>
 
 </html>

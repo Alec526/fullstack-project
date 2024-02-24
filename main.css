@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", sans-serif;
+    color: #844ffe;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* #wrapper {
+    min-height: 100%;
+    overflow: auto;
+    padding-bottom: 100px;
+} */
+
+.logo {
+    color: #844ffe;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+}
+
+[class*="box"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+
+    background: #80fcd4;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 95vh;
+    padding: 3rem calc((110vw - 1300px) / 2);
+}
+
+.box-admin {
+    background: #d1faff;
+}
+
+[class^="column-"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    gap: 1rem;
+}
+
+.column-left h1 {
+    font-size: 3rem;
+}
+
+.column-left p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    width: 100%;
+    text-align: start;
+}
+
+@media screen and (max-width: 768px) {
+    .box-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.events {
+    width: min-content;
+}
+
+.message {
+    position: absolute;
+    background: #d1faff;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4b26a2;
+}
+
+.warning {
+    width: 200px;
+    text-align: center;
+}
+
+#form {
+    width: 100px;
+    color: #844ffe;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+.form-item-row {
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+}
+
+.submitbutton {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    background-color: #844ffe;
+    color: #ffffff;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+    padding: 1em;
+    border: solid 1px;
+    border-radius: 6px;
+}
+
+legend {
+    font-size: 1.25em;
+    padding: 0 0.25em;
+}
+
+input {
+    padding: 0.3em;
+    border: solid 1px #999;
+    width: 15em;
+}
