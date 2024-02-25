@@ -1,3 +1,4 @@
+
 <div id='<?php echo htmlspecialchars($eventID); ?>' class='popup'>
   <div class='popup-content'>
     <div class="popup-info">
@@ -19,8 +20,8 @@
       <h3>Get tickets for <?php echo htmlspecialchars($event['naam']); ?></h3>
       <p>Price: <?php echo htmlspecialchars($event['prijs']); ?></p>
     </div>
-    
-    <a href="data:image/png;base64,<?php require_once 'scripts/create-ticket.php'; echo $base64EncodedString; ?>" download="ticket.png"  class="button">Download</a>
+
+    <a href="data:image/png;base64,<?php echo createTicket($event); ?>" download="ticket.png" class="button">Download</a>
 
   </div>
 </div>

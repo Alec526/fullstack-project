@@ -50,10 +50,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     padding: 0 2rem;
     gap: 1rem;
 }
+
+[class$="row"] {
+    flex-direction: row;
+}
+
 
 .column-left h1 {
     font-size: 3rem;
@@ -76,6 +81,16 @@ body {
     width: min-content;
 }
 
+.events * {
+    /* disable text wrap */
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.no-list {
+    list-style-type: none;
+}
+
 .message {
     position: absolute;
     background: #d1faff;
@@ -93,7 +108,7 @@ body {
 }
 
 #form {
-    width: 100px;
+    width: fit-content;
     color: #844ffe;
 }
 

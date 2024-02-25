@@ -5,6 +5,24 @@ include 'comp/header.html';
 ?>
 <link rel="stylesheet" href="main.css">
 
+<script>
+  function showPopup(id) {
+    console.log("open popup: " + id);
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closePopup(id) {
+    console.log("close popup: " + id);
+    document.getElementById(id).style.display = 'none';
+  }
+
+  function openTicketsPopup(id) {
+    console.log("get tickets for: " + id);
+    closePopup(id);
+    showPopup('get-tickets-' + id);
+  }
+</script>
+
 <body>
   <div id="wrapper">
     <section class="box grid">
@@ -34,7 +52,7 @@ include 'comp/header.html';
   <?php
   include 'comp/footer.html';
   ?>
-  
+
 </body>
 
 </html>
