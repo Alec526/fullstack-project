@@ -131,7 +131,7 @@ $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <style>
     nav {
-      background: #dcedff;
+      background: #844ffe;
     }
 
     .tablinkbar {

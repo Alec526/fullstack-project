@@ -17,14 +17,6 @@ body {
     padding-bottom: 100px;
 } */
 
-.logo {
-    color: #844ffe;
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-style: italic;
-    padding: 0 2rem;
-}
-
 [class*="box"] {
     display: flex;
     flex-direction: column;
@@ -32,7 +24,7 @@ body {
     align-items: center;
     padding: 5rem;
 
-    background: #80fcd4;
+    background: #74e8c3;
 }
 
 .grid {
@@ -43,7 +35,7 @@ body {
 }
 
 .box-admin {
-    background: #d1faff;
+    background: #8be7fd;
 }
 
 [class^="column-"] {
@@ -85,6 +77,16 @@ body {
     /* disable text wrap */
     white-space: nowrap;
     min-width: fit-content;
+}
+
+.event {
+    display: flex;
+    flex-direction: row;
+}
+
+.eventdata {    
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 .no-list {
