@@ -129,49 +129,6 @@ $genres = $stmt->fetchAll(PDO::FETCH_ASSOC);
   include 'comp/footer.html';
   ?>
 
-  <style>
-    nav {
-      background: #844ffe;
-    }
-
-    .tablinkbar {
-      overflow: hidden;
-      border-radius: 5px;
-    }
-
-    .tablinkbar button {
-      float: left;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      padding: 14px 16px;
-      transition: 0.3s;
-      font-size: 17px;
-    }
-
-    .tablinkbar button:nth-child(2) {
-      border-left: 1px solid #ccc;
-      border-right: 1px solid #ccc;
-    }
-
-    .tablinkbar button:hover {
-      background-color: #ddd;
-    }
-
-    .tablinkbar button.active {
-      background-color: #ccc;
-    }
-
-    .tabcontent {
-      display: none;
-      padding: 6px 12px;
-
-      width: 100%;
-
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
 
   <script>
     function showTab(evt, tabName) {

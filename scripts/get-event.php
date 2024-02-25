@@ -19,15 +19,16 @@ try {
 
   // Loop through each event day
   foreach ($event_days as $event_day) {
-    echo "<div class='event'>";
-    echo "<h2 class='date'>" . htmlspecialchars($event_day['day']) . "</h2>";
+    echo "<div class='event-day'>";
+    echo "<h2 class='date'>" . date('D d M', strtotime($event_day['day'])) . "</h2>";
 
     $events = get_events_by_day($conn, $event_day['day']);
-
+    echo "<div class='events'>";
     // Display each event for the day
     foreach ($events as $event) {
       display_event($conn, $event, $event_day['day']);
     }
+    echo "</div>"; // Close .events
     echo "</div>"; // Close .event
   }
 } catch (PDOException $e) {
@@ -46,29 +47,33 @@ function get_events_by_day($conn, $day)
 function display_event($conn, $event, $event_day)
 {
   $eventID = "popup-" . htmlspecialchars($event['id']);
+  echo "<div class='event'>";
   echo "<div class='eventdata' onclick='showPopup(\"" . htmlspecialchars($eventID) . "\")'>";
   // Display basic event data
-  echo "<h3>" . htmlspecialchars($event['naam']) . "</h3>";
-  $tijd = date('H:i', strtotime($event['datum']));
-  echo "<p>" . htmlspecialchars($tijd) . "</p>";
-  echo "<p>" . htmlspecialchars($event['prijs']) . "</p>";
+  echo "<h3 class='naam'>" . htmlspecialchars($event['naam']) . "</h3>";
+  $tijd = date('H:i', strtotime($event['datum'])); // important also used in popup
 
   $bands = get_band_by_event($conn, $event['id']);
 
   // Display bands for the event
-  echo "<ul class='no-list'>";
+  echo "<div class='bands'>";
   if (!empty($bands)) {
-    echo "<lh>Bands:</lh>";
+    echo "<h6>Bands: ";
     foreach ($bands as $band) {
-      echo "<li>" . htmlspecialchars($band['naam']) . "</li>";
+      echo  htmlspecialchars($band['naam']);
+      if (next($bands)) {
+        echo ", ";
+      }
     }
+    echo "</h6>";
   }
-  echo "</ul>";
+  echo "</div>";
 
 
   echo "</div>"; // Close .eventdata
 
   // Include popup content for each event
+  echo "</div>"; // Close .event-content
   include 'comp/event-popup.php';
 }
 
@@ -132,4 +137,15 @@ function getRandKey($length)
   $randStr = str_shuffle($str);
   return substr($randStr, 0, $length);
 }
-?>
+
+
+function generageLorumIpsum($length = 1)
+{
+  $loremBase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec odio nec nunc tincidunt tincidunt. Donec auctor, nunc nec";
+  $lorem = $loremBase;
+  for ($i = 0; $i < $length; $i++) {
+    $lorem .= " " . $loremBase;
+  }
+
+  return $lorem; 
+}

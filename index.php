@@ -8,12 +8,12 @@ include 'comp/header.html';
 <script>
   function showPopup(id) {
     console.log("open popup: " + id);
-    document.getElementById(id).style.display = 'block';
+    document.getElementById(id).classList.add('show');
   }
 
   function closePopup(id) {
     console.log("close popup: " + id);
-    document.getElementById(id).style.display = 'none';
+    document.getElementById(id).classList.remove('show');
   }
 
   function openTicketsPopup(id) {
@@ -41,7 +41,7 @@ include 'comp/header.html';
     </section>
 
     <section class="box">
-      <div class="events">
+      <div class="event-days">
         <?php
         require_once 'scripts/get-event.php';
         ?>
