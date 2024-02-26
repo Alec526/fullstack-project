@@ -1,7 +1,7 @@
 <?php
 require_once '../database.php';
 
-// code will not work if empty fields
+// code werkt niet als fields leeg zijn
 if (!isset($_POST['submit'])) header('Location: ' . $_SERVER['HTTP_REFERER'] . '?band_saved=false');
 
 $bandnaam = $_POST['naam'];

@@ -72,12 +72,10 @@ function display_event($conn, $event, $event_day)
 
   echo "</div>"; // Close .eventdata
 
-  // Include popup content for each event
   echo "</div>"; // Close .event-content
   include 'comp/event-popup.php';
 }
 
-// Function to get band by event
 function get_band_by_event($conn, $eventId)
 {
   $stmt = $conn->prepare('SELECT b.id, b.naam FROM band AS b
@@ -89,32 +87,32 @@ function get_band_by_event($conn, $eventId)
 
 function createTicket($event)
 {
-  // Set the content-type
+  // Set content-type en voeg texten toe
   $base64EncodedString = '';
   try {
-    $text1 = 'Hello, this is your ticket for ' . $event['naam'] . '.';
+    $text1 = 'Bedankt voor je boeking bij ' . $event['naam'] . '.';
     $key = getRandKey(10);
-    $text2 = 'Your ticket key is: ' . $key . '. Thank you for visiting Casus Cafe!';
+    $text2 = 'Jouw ticket succesvol is geboekt. Dit is je ticket key: ' . $key . '. Bedankt dat je met ons meedoet!';
 
-    // Create the image
+    // Maak image aan
     $height = max(strlen($text1) * 10, strlen($text2) * 14);
     $im = imagecreatetruecolor($height, 100); // Increased height to accommodate two lines of text
 
-    // Create some colors
+    // Maak kleuren aan
     $white = imagecolorallocate($im, 255, 255, 255);
     $black = imagecolorallocate($im, 0, 0, 0);
     imagefilledrectangle($im, 0, 0, $height - 1, 99, $white);
 
-    // The font to use
+    // Voeg font toe
     $font = 'C:\wamp64\www\fullstack-project\fonts\Arial.ttf'; // Replace with the path to your font file
 
-    // Add the first line of text
+    // Eerste lijn text
     imagettftext($im, 20, 0, 10, 30, $black, $font, $text1);
 
-    // Add the second line of text, adjusting the y-coordinate to simulate a newline
+    // Tweede lijn text
     imagettftext($im, 20, 0, 10, 60, $black, $font, $text2);
 
-    // Start output buffering
+    // Output buffering
     ob_start();
     imagepng($im);
     $imageData = ob_get_contents();
@@ -123,7 +121,7 @@ function createTicket($event)
     // Cleanup
     imagedestroy($im);
 
-    // Encode the image data
+    // Encode image data
     $base64EncodedString = base64_encode($imageData);
   } catch (Exception $e) {
     $base64EncodedString = $e->getMessage();

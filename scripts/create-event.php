@@ -1,7 +1,7 @@
 <?php
 require_once '../database.php';
 
-// code will not work if empty fields
+// code werkt niet als fields leeg zijn
 if (!isset($_POST['submit'])) header('Location: ' . $_SERVER['HTTP_REFERER'] . '?event_saved=false');
 
 echo $_POST['date'];
@@ -21,5 +21,5 @@ $stmt->execute(array(
   ':entreeprijs' => $entreeprijs
 ));
 
-// return to last page
+// terug naar vorige pagina
 header('Location: ' . $_SERVER['HTTP_REFERER'] . '?event_saved=true');

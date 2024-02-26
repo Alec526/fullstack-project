@@ -1,7 +1,7 @@
 <?php
 require_once '../database.php';
 
-// code will not work if empty fields
+// code werkt niet als fields leeg zijn
 if (!isset($_POST['submit'])) header('Location: ' . $_SERVER['HTTP_REFERER'] . '?data_saved=false');
 
 try {
@@ -16,7 +16,7 @@ try {
     ':event_id' => $event_id,
     ':band_id' => $band_id
   ));
-  // replace with last page and remove old query
+  // replace met laatste pagina en verwijder oude query
   $referer = $_SERVER['HTTP_REFERER'];
   $referer = explode('?', $referer)[0];
   header('Location: ' .  $referer . '?data_saved=true');
@@ -29,9 +29,8 @@ try {
   } else {
     echo "Connection failed: " . htmlspecialchars($e->getMessage());
 
-    // return to last page after 2 seconds
+    // terug naar vorige pagina na 2 seconden
     header("refresh:2;url=" . $referer);
   }
 }
 
-// return to last page

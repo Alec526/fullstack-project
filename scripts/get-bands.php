@@ -16,7 +16,7 @@ try {
         echo "<p class='warning'>No bands found.</p>";
     }
 
-    // Loop through each band
+    // Loop door elke band
     foreach ($bands as $band) {
         echo "<div class='band'>";
         echo "<h2 class='bandnaam'>" . htmlspecialchars($band['naam']) . "</h2>";

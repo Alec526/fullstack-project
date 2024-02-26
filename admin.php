@@ -5,7 +5,7 @@
 include 'comp/header.html';
 require_once 'database.php';
 
-// if header data_saved is set, show message
+// laat bericht zien zodra header data is opgeslagen
 if (isset($_GET['data_saved'])) {
   echo "<div class='message'>Data saved</div>";
 }
